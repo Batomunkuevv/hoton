@@ -1,0 +1,88 @@
+.sale-rules {
+    padding: 48px 32px 36px;
+    margin-left: 0.5px;
+    margin-right: 0.5px;
+    border-left: 1px solid #6c6c6c;
+    border-right: 1px solid #6c6c6c;
+
+    @media (max-width: 992px) {
+        padding: 39px 16px 43px;
+    }
+
+    @media (max-width: 767px) {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    &__title {
+        margin-bottom: 24px;
+        font-family: $accentFont;
+        font-size: 40px;
+        line-height: 1;
+
+        @media (max-width: 992px) {
+            font-size: 32px;
+        }
+    }
+
+    &__body {
+        @media (min-width: 767px) {
+            display: flex;
+            align-items: start;
+            gap: 36px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 44px;
+        flex: 1;
+
+        @media (max-width: 767px) {
+            margin-bottom: 24px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 24px;
+        }
+    }
+
+    &__item {
+        &-caption {
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: toProcent(16, 14);
+            color: rgba(255, 255, 255, 0.56);
+
+            @media (max-width: 576px) {
+                margin-bottom: 8px;
+                font-size: 12px;
+                line-height: 1;
+            }
+        }
+
+        &-value {
+            font-family: $accentFont;
+            font-size: 24px;
+            line-height: 1;
+
+            @media (max-width: 576px) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__button {
+        @media (max-width: 767px) {
+            margin-right: auto;
+            width: 100%;
+            max-width: 256px;
+            margin-left: auto;
+        }
+
+        @media (max-width: 480px) {
+            max-width: unset;
+        }
+    }
+}

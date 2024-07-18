@@ -1,0 +1,110 @@
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 42px;
+
+    &__item {
+        display: flex;
+        align-items: start;
+        gap: 8px;
+    }
+
+    &__tab {
+        padding-bottom: 9px;
+        color: inherit;
+        font-family: $accentFont;
+        font-size: 20px;
+        line-height: toProcent(20, 24);
+        text-transform: uppercase;
+        position: relative;
+        transition: all 0.3s ease-in-out 0s;
+
+        &:hover {
+            color: $colorMain;
+        }
+
+        &--has-active-shadow {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: calc(50% - 9px);
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 52px;
+                aspect-ratio: 1/1;
+                background: $colorMain;
+                filter: blur(32px);
+                z-index: -1;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease-in-out 0s;
+            }
+
+            &.is-active {
+                &::before {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        &.is-active {
+            pointer-events: none;
+
+            &::after {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        &.is-soon {
+            pointer-events: none;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: $colorMain;
+            box-shadow: 0 0 20px 0 $colorMain;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out 0s;
+        }
+    }
+
+    &__soon {
+        padding: 3px 32px;
+        margin-top: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: $accentFont;
+        font-size: 12px;
+        line-height: 1;
+        white-space: nowrap;
+        border: 1px solid #6c6c6c;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px);
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            aspect-ratio: 1/1;
+            background: $colorMain;
+            filter: blur(32px);
+            z-index: -1;
+        }
+    }
+}

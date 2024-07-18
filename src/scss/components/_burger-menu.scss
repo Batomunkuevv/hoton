@@ -1,0 +1,92 @@
+.burger-menu {
+    padding: 16px 0 32px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(16px);
+    transform: translateX(-100%);
+    opacity: 0;
+    overflow: auto;
+    z-index: 100;
+    transition: all 0.5s ease-in-out 0s;
+
+    @supports not selector(::-webkit-scrollbar) {
+        scrollbar-width: thin;
+        scrollbar-color: $colorMain #fff;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: 0 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $colorMain;
+        border-radius: 20px;
+        border: 1px solid transparent;
+    }
+
+    &.is-open {
+        opacity: 1;
+        transform: unset;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 20px;
+        bottom: 0;
+        width: 1px;
+        background: #6c6c6c;
+    }
+
+    &__container {
+        padding-right: 44px;
+    }
+
+    &__top {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 32px;
+    }
+
+    &__logo {
+        margin-bottom: 56px;
+        width: 153px;
+        aspect-ratio: 153/62;
+    }
+
+    &__close {
+        flex: none;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #6c6c6c;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(16px);
+    }
+
+    &__tabs {
+        margin-bottom: 50px;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    &__button {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        max-width: 320px;
+    }
+}

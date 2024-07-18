@@ -1,0 +1,26 @@
+.token {
+    margin-top: 80px;
+
+    @media (max-width: 1200px) {
+        margin-top: 32px;
+    }
+
+    &__title {
+        margin-bottom: 64px;
+        font-family: $accentFont;
+        font-size: 64px;
+
+        @media (max-width: 1200px) {
+            font-size: 48px;
+            margin-bottom: 48px;
+        }
+
+        @media (max-width: 992px) {
+            margin-bottom: 32px;
+            font-size: 40px;
+        }
+    }
+
+    &__text {
+    }
+}

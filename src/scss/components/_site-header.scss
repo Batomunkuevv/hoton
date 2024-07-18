@@ -1,0 +1,52 @@
+.site-header {
+    position: relative;
+    z-index: 4;
+
+    @media (max-width: 1200px) {
+        margin-bottom: 48px;
+    }
+
+    @media (max-width: 767px) {
+        margin-bottom: 24px;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (min-width: 1200px) {
+            padding-left: 34%;
+        }
+    }
+
+    &__burger {
+        @media (min-width: 576px) {
+            display: none;
+        }
+    }
+
+    &__tabs {
+        margin-top: 13px;
+
+        @media (max-width: 767px) {
+            gap: 24px;
+        }
+
+        @media (max-width: 576px) {
+            display: none;
+        }
+    }
+
+    &__button {
+        &::before {
+            background: url("../images/button.svg") 0 0 / 100% 100% no-repeat;
+        }
+    }
+
+    &__panel {
+        @media (min-width: 576px) {
+            display: none;
+        }
+    }
+}

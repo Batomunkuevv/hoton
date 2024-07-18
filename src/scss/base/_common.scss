@@ -1,0 +1,101 @@
+html,
+body {
+    font-family: $font;
+    font-size: 16px;
+    line-height: 150%;
+    color: $colorFont;
+    font-weight: 300;
+    scrollbar-gutter: stable;
+    background: #020304;
+
+    @supports not selector(::-webkit-scrollbar) {
+        scrollbar-width: thin;
+        scrollbar-color: $colorMain #fff;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: 0 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $colorMain;
+        border-radius: 20px;
+        border: 1px solid transparent;
+    }
+
+    ::selection {
+        background: $colorMain;
+        color: #fff;
+    }
+}
+
+// P
+
+p {
+    &:has(+ p) {
+        margin-bottom: 28px;
+
+        @media(max-width: 767px){
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// a
+
+a {
+    color: $colorFont;
+    transition: all 0.3s ease-in-out 0s;
+
+    &:not([class]) {
+        color: $colorMain;
+        border-bottom: 1px solid transparent;
+
+        &:hover {
+            border-color: $colorMain;
+        }
+    }
+}
+
+br {
+    @media (max-width: 1200px) {
+        display: none;
+    }
+}
+
+// Img
+
+img {
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+// Svg
+
+svg {
+    max-width: 100%;
+}
+
+// Visually hidden
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
